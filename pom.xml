@@ -51,6 +51,10 @@
       <artifactId>mapper-spring-boot-starter</artifactId>
       <version>1.1.7</version>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <finalName>${project.artifactId}</finalName>

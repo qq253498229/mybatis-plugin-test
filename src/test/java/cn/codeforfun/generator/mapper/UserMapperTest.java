@@ -1,6 +1,7 @@
 package cn.codeforfun.generator.mapper;
 
 import cn.codeforfun.generator.model.User;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,12 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import java.nio.MappedByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
+@Slf4j
 public class UserMapperTest {
   @Resource
   private UserMapper userMapper;
@@ -21,6 +22,7 @@ public class UserMapperTest {
   @Test
   public void select() {
     List<User> users = userMapper.selectAll();
+    log.info("user size:{}", users.size());
     Assert.assertNotNull(users);
   }
 
@@ -46,6 +48,7 @@ public class UserMapperTest {
     userList.add(user5);
     userList.add(user6);
     int i = userMapper.insertList(userList);
+    log.info("insert amount:{}", i);
     Assert.assertEquals(i, 6);
   }
 }
