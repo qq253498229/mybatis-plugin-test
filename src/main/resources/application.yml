@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///test?useUnicode=true&characterEncoding=utf8&useSSL=false&autoReconnect=true
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  type-aliases-package: cn.codeforfun.**.model
+  mapper-locations: classpath:cn/codeforfun/**/*.xml
+mapper:
+  mappers: cn.codeforfun.util.MyMapper
+  not-empty: false
+  identity: MYSQL
